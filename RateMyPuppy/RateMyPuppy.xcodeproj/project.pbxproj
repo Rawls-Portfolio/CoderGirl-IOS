@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A03A5462058ADE000FBC4CC /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A03A5452058ADE000FBC4CC /* FavoriteViewController.swift */; };
 		3A03A54C2058E26200FBC4CC /* RateMyPuppyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A03A54B2058E26200FBC4CC /* RateMyPuppyModel.swift */; };
 		3A03A54E2059420800FBC4CC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A03A54D2059420800FBC4CC /* Extensions.swift */; };
 		3AA352862058A345008E3139 /* PuppyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA352852058A345008E3139 /* PuppyData.swift */; };
@@ -31,7 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A03A5452058ADE000FBC4CC /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		3A03A54B2058E26200FBC4CC /* RateMyPuppyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateMyPuppyModel.swift; sourceTree = "<group>"; };
 		3A03A54D2059420800FBC4CC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3AA352852058A345008E3139 /* PuppyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyData.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 				3A03A54B2058E26200FBC4CC /* RateMyPuppyModel.swift */,
 				3ABDAD7420589FD400B7B475 /* MainViewController.swift */,
 				3AA352872058A77B008E3139 /* PuppyViewController.swift */,
-				3A03A5452058ADE000FBC4CC /* FavoriteViewController.swift */,
 				3ABDAD922058A07600B7B475 /* Supporting Files */,
 				3AA352852058A345008E3139 /* PuppyData.swift */,
 				3A03A54D2059420800FBC4CC /* Extensions.swift */,
@@ -227,7 +224,6 @@
 				3AA352862058A345008E3139 /* PuppyData.swift in Sources */,
 				3ABDAD7320589FD400B7B475 /* AppDelegate.swift in Sources */,
 				3A03A54C2058E26200FBC4CC /* RateMyPuppyModel.swift in Sources */,
-				3A03A5462058ADE000FBC4CC /* FavoriteViewController.swift in Sources */,
 				3A03A54E2059420800FBC4CC /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
