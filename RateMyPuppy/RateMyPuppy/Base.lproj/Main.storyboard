@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,38 +37,43 @@
                                 </connections>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-1j-Mm9" userLabel="Rating Stack">
-                                <rect key="frame" x="112.5" y="470" width="150" height="30"/>
+                                <rect key="frame" x="94" y="470" width="187.5" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-2T-224">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-2T-224" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="37.5" height="30"/>
                                         <state key="normal" title="1"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pil-SF-orE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lm5-LM-rkr">
-                                        <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lm5-LM-rkr" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
+                                        <rect key="frame" x="37.5" y="0.0" width="37.5" height="30"/>
                                         <state key="normal" title="2"/>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QPm-Dp-sHe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wG-30-77c">
-                                        <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wG-30-77c" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
+                                        <rect key="frame" x="75" y="0.0" width="37.5" height="30"/>
                                         <state key="normal" title="3"/>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gpB-8c-tCm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpZ-Kc-Qk9">
-                                        <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpZ-Kc-Qk9" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
+                                        <rect key="frame" x="112.5" y="0.0" width="37.5" height="30"/>
                                         <state key="normal" title="4"/>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Fu-Gu-SJu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iS-Ij-KjM">
-                                        <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iS-Ij-KjM" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
+                                        <rect key="frame" x="150" y="0.0" width="37.5" height="30"/>
                                         <state key="normal" title="5"/>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bbE-VG-3tA"/>
@@ -87,6 +93,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="380-Re-l9e"/>
+                            <constraint firstItem="Iba-1j-Mm9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="4dD-vj-vVj"/>
                             <constraint firstItem="8n7-hG-Mbz" firstAttribute="top" secondItem="Iba-1j-Mm9" secondAttribute="bottom" constant="15" id="BUi-16-GlJ"/>
                             <constraint firstItem="Iba-1j-Mm9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FFo-JU-sb2"/>
                             <constraint firstItem="W1V-KW-vRP" firstAttribute="top" secondItem="9Bb-YW-n3D" secondAttribute="bottom" constant="15" id="YZk-XK-O8Z"/>
