@@ -1,10 +1,8 @@
 # CoderGirl-IOS
 ## Container Views, Custom Views and Gestures
 
-*Taught by Amanda Rawls*
-
 #### Demo app: Puppy Rating App
-- two content view controllers - normal puppies, most favorite puppy
+- container view
 - Track information about puppies
 - Use swipe gesture to browse puppies
 - Use double tap to save as most favorite puppy and display

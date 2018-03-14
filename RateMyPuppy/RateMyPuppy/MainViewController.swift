@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
         puppyView.updatePuppy(with: model.nextPuppy)
     }
     
-    @IBAction func toggleFavorite(_ sender: UIButton) {
+    @IBAction func toggleFavorite(_ sender: Any) {
         guard let puppyView = self.childViewControllers.last as? PuppyViewController,
             let favoritePuppy = model.favoritePuppy else {
             print("unable to display next puppy")

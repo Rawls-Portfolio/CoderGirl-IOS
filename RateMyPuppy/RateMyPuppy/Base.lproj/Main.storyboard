@@ -97,6 +97,9 @@
                             <constraint firstItem="8n7-hG-Mbz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ja8-7K-4Py"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ro8-bl-KHf" appends="YES" id="fL6-lw-NAe"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="nextPuppy" destination="9Bb-YW-n3D" id="4Jm-9Q-Biq"/>
@@ -106,6 +109,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="Ro8-bl-KHf">
+                    <connections>
+                        <action selector="displayNextPuppy:" destination="BYZ-38-t0r" id="YwX-ra-uCX"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-119.2" y="-110.19490254872565"/>
         </scene>
