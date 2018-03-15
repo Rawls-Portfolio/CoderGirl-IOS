@@ -2,7 +2,8 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var puppyDetails: UIView!
+
+    @IBOutlet weak var puppyDetails: ContainerView!
     @IBOutlet weak var toggleFavorite: UIButton!
     @IBOutlet weak var nextPuppy: UIButton!
     @IBOutlet weak var ratingButtons: UIStackView!
@@ -12,15 +13,16 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super .prepare(for: segue, sender: sender)
-        if let puppyView = segue.destination as? PuppyViewController {
-            puppyView.delegate = self
+        puppyDetails.delegate = self
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let puppyViewController = storyboard.instantiateViewController(withIdentifier: "puppyView") as? PuppyViewController else {
+            print("Unable to instantiate PuppyViewController")
+            return
         }
         
-        toggleButtons()
+        puppyViewController.delegate = self
+        puppyDetails.activeViewController = puppyViewController
     }
     
     @IBAction func updateRating(_ sender: UIButton) {
@@ -33,7 +35,6 @@ class MainViewController: UIViewController {
         model.rateCurrentPuppy(as: rating)
     }
 
-    
     @IBAction func displayNextPuppy(_ sender: Any) {
         guard let puppyView = self.childViewControllers.last as? PuppyViewController else {
             print("unable to display next puppy")
@@ -43,28 +44,27 @@ class MainViewController: UIViewController {
         puppyView.updatePuppy(with: model.nextPuppy)
     }
     
-    @IBAction func toggleFavorite(_ sender: Any) {
-        guard let puppyView = self.childViewControllers.last as? PuppyViewController,
-            let favoritePuppy = model.favoritePuppy else {
-            print("unable to display next puppy")
-            return
-        }
+    @IBAction func toggleFavorite(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        toggleButtons()
-        puppyView.updatePuppy(with: favoritePuppy)
-    }
-    
-    func toggleButtons(){
-        if isFavorite {
-            toggleFavorite.setTitle("Continue Rating Puppies", for: .normal)
-            nextPuppy.isHidden = true
-            ratingButtons.isHidden = true
-            isFavorite = false
-        } else {
-            toggleFavorite.setTitle("Show My Favorite Puppy", for: .normal)
-            nextPuppy.isHidden = false
-            ratingButtons.isHidden = false
-            isFavorite = true
+        switch self.childViewControllers.last {
+        case let puppyView as PuppyViewController:
+            guard let favoriteViewController = storyboard.instantiateViewController(withIdentifier: "favView") as? FavoriteViewController else {
+                print("Unable to instantiate FavoriteViewController")
+                return
+            }
+            favoriteViewController.delegate = self
+            puppyDetails.activeViewController = favoriteViewController
+        case let favoritePuppy as FavoriteViewController:
+            guard let puppyViewController = storyboard.instantiateViewController(withIdentifier: "puppyView") as? FavoriteViewController else {
+                print("Unable to instantiate FavoriteViewController")
+                return
+            }
+            puppyViewController.delegate = self
+            puppyDetails.activeViewController = puppyViewController
+        default:
+            print("current view is unknown; unable to toggle")
+            return
         }
     }
 
@@ -80,4 +80,16 @@ extension MainViewController: PuppyDataDelegate {
     func getFavoritePuppy() -> PuppyObject? {
         return model.favoritePuppy
     }
+}
+
+// MARK: - Container View Delegate
+extension MainViewController: ContainerViewDelegate {
+    func addChildToParent(with child: UIViewController) {
+        addChildViewController(child)
+    }
+    
+    func notifyDidMoveToParent(with child: UIViewController) {
+        child.didMove(toParentViewController: self)
+    }
+    
 }

@@ -20,6 +20,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP" customClass="ContainerView" customModule="RateMyPuppy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="177" width="375" height="334"/>
+                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bb-YW-n3D">
                                 <rect key="frame" x="145.5" y="35" width="84" height="30"/>
                                 <state key="normal" title="Next Puppy!"/>
@@ -27,24 +30,15 @@
                                     <action selector="displayNextPuppy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UwP-I5-bKP"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-KW-vRP">
-                                <rect key="frame" x="0.0" y="80" width="375" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="W1V-KW-vRP" secondAttribute="height" multiplier="1:1" id="pR1-Fn-Pge"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="Th9-Ba-SNu" kind="embed" identifier="puppyDetails" id="TJU-d8-LWX"/>
-                                </connections>
-                            </containerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-1j-Mm9" userLabel="Rating Stack">
-                                <rect key="frame" x="94" y="470" width="187.5" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-1j-Mm9">
+                                <rect key="frame" x="112.5" y="526" width="150" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-2T-224" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="37.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="1"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -52,29 +46,49 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lm5-LM-rkr" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
-                                        <rect key="frame" x="37.5" y="0.0" width="37.5" height="30"/>
+                                        <rect key="frame" x="30" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="2"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QPm-Dp-sHe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wG-30-77c" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
-                                        <rect key="frame" x="75" y="0.0" width="37.5" height="30"/>
+                                        <rect key="frame" x="60" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="3"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gpB-8c-tCm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpZ-Kc-Qk9" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
-                                        <rect key="frame" x="112.5" y="0.0" width="37.5" height="30"/>
+                                        <rect key="frame" x="90" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="4"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Fu-Gu-SJu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iS-Ij-KjM" customClass="RoundButton" customModule="RateMyPuppy" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="0.0" width="37.5" height="30"/>
+                                        <rect key="frame" x="120" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="5"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="updateRating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bbE-VG-3tA"/>
                                         </connections>
@@ -92,16 +106,18 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="W1V-KW-vRP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="380-Re-l9e"/>
-                            <constraint firstItem="Iba-1j-Mm9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="4dD-vj-vVj"/>
-                            <constraint firstItem="8n7-hG-Mbz" firstAttribute="top" secondItem="Iba-1j-Mm9" secondAttribute="bottom" constant="15" id="BUi-16-GlJ"/>
-                            <constraint firstItem="Iba-1j-Mm9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FFo-JU-sb2"/>
-                            <constraint firstItem="W1V-KW-vRP" firstAttribute="top" secondItem="9Bb-YW-n3D" secondAttribute="bottom" constant="15" id="YZk-XK-O8Z"/>
-                            <constraint firstItem="9Bb-YW-n3D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="bsE-Fb-Y4v"/>
-                            <constraint firstItem="9Bb-YW-n3D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e1q-bL-8BN"/>
-                            <constraint firstItem="Iba-1j-Mm9" firstAttribute="top" secondItem="W1V-KW-vRP" secondAttribute="bottom" constant="15" id="eCP-lS-dkr"/>
-                            <constraint firstItem="W1V-KW-vRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hds-Mx-kmH"/>
-                            <constraint firstItem="8n7-hG-Mbz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ja8-7K-4Py"/>
+                            <constraint firstItem="Iba-1j-Mm9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H03-dH-bOI"/>
+                            <constraint firstItem="8n7-hG-Mbz" firstAttribute="centerX" secondItem="9Bb-YW-n3D" secondAttribute="centerX" id="Iz0-Yf-434"/>
+                            <constraint firstItem="8n7-hG-Mbz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="MFr-si-6Jd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Bb-YW-n3D" secondAttribute="trailing" constant="83" id="Mga-XK-oC3"/>
+                            <constraint firstItem="W1V-KW-vRP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UbX-E7-o1A"/>
+                            <constraint firstItem="W1V-KW-vRP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WUb-sp-w2q"/>
+                            <constraint firstItem="9Bb-YW-n3D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="b1o-A3-0Tj"/>
+                            <constraint firstItem="W1V-KW-vRP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cBc-dP-A7r"/>
+                            <constraint firstItem="9Bb-YW-n3D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="drs-qG-tiH"/>
+                            <constraint firstItem="9Bb-YW-n3D" firstAttribute="top" secondItem="8n7-hG-Mbz" secondAttribute="bottom" constant="8" symbolic="YES" id="pSW-Oi-6eB"/>
+                            <constraint firstItem="W1V-KW-vRP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="tsL-j9-aNS"/>
+                            <constraint firstItem="Iba-1j-Mm9" firstAttribute="top" secondItem="W1V-KW-vRP" secondAttribute="bottom" constant="15" id="wg9-Vo-PgW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -109,16 +125,14 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="nextPuppy" destination="9Bb-YW-n3D" id="4Jm-9Q-Biq"/>
-                        <outlet property="puppyDetails" destination="W1V-KW-vRP" id="8VX-N0-1OP"/>
-                        <outlet property="ratingButtons" destination="Iba-1j-Mm9" id="nvX-FM-L48"/>
+                        <outlet property="puppyDetails" destination="W1V-KW-vRP" id="826-uf-wSG"/>
                         <outlet property="toggleFavorite" destination="8n7-hG-Mbz" id="lxW-Qv-HqC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="Ro8-bl-KHf">
+                <swipeGestureRecognizer direction="right" id="PZA-LP-O8E">
                     <connections>
-                        <action selector="displayNextPuppy:" destination="BYZ-38-t0r" id="YwX-ra-uCX"/>
+                        <action selector="displayNextPuppy:" destination="BYZ-38-t0r" id="oCH-IM-pVh"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -129,12 +143,11 @@
             <objects>
                 <viewController storyboardIdentifier="puppyView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Th9-Ba-SNu" customClass="PuppyViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Jd-dS-fim">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-lt-eZf">
-                                <rect key="frame" x="15" y="15" width="345" height="345"/>
-                                <gestureRecognizers/>
+                                <rect key="frame" x="15" y="35" width="345" height="617"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,6 +166,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXc-WO-eh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="638" y="-110"/>
+        </scene>
+        <!--Favorite View Controller-->
+        <scene sceneID="VTU-H6-sw2">
+            <objects>
+                <viewController storyboardIdentifier="favView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="shX-xD-6TQ" customClass="FavoriteViewController" customModule="RateMyPuppy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nCM-0C-PXH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tpa-OC-FGZ">
+                                <rect key="frame" x="-103" y="35" width="582" height="581.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tpa-OC-FGZ" secondAttribute="height" multiplier="1:1" id="s8O-No-32q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiK-fd-EcG">
+                                <rect key="frame" x="0.0" y="631.5" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tpa-OC-FGZ" firstAttribute="top" secondItem="gCo-85-2V6" secondAttribute="top" constant="15" id="CKE-X6-3zc"/>
+                            <constraint firstItem="BiK-fd-EcG" firstAttribute="trailing" secondItem="gCo-85-2V6" secondAttribute="trailing" id="CzX-3p-r9E"/>
+                            <constraint firstItem="BiK-fd-EcG" firstAttribute="top" secondItem="tpa-OC-FGZ" secondAttribute="bottom" constant="15" id="Vcy-yd-H3k"/>
+                            <constraint firstAttribute="bottom" secondItem="BiK-fd-EcG" secondAttribute="bottom" constant="15" id="Xnx-gf-tQy"/>
+                            <constraint firstItem="tpa-OC-FGZ" firstAttribute="centerX" secondItem="nCM-0C-PXH" secondAttribute="centerX" id="w99-QI-wS9"/>
+                            <constraint firstItem="BiK-fd-EcG" firstAttribute="leading" secondItem="gCo-85-2V6" secondAttribute="leading" id="wnM-5i-FGC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gCo-85-2V6"/>
+                    </view>
+                    <connections>
+                        <outlet property="favoriteText" destination="BiK-fd-EcG" id="R7Y-zK-ars"/>
+                        <outlet property="imageView" destination="tpa-OC-FGZ" id="lrO-kT-5R3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XFU-Zd-7ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="573"/>
         </scene>
     </scenes>
 </document>

@@ -12,9 +12,8 @@ import UIKit
     }
     
     func defaultSettings(){
-        self.layer.backgroundColor = UIColor.lightGray.cgColor
-        self.titleLabel?.textColor = UIColor.purple
-        self.layer.cornerRadius = 10
+        self.layer.backgroundColor = UIColor.darkGray.cgColor
+        self.setTitleColor(.white, for: .normal)
     }
     
     override init(frame: CGRect) {
@@ -26,4 +25,4 @@ import UIKit
         super.init(coder: aDecoder)
         defaultSettings()
     }
-}
+} 

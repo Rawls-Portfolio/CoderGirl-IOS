@@ -16,6 +16,7 @@ class PuppyViewController: UIViewController {
         }
         
         imageView.image = UIImage.init(named: currentPuppy.image)
+        
     }
     
     func updatePuppy(with puppy: PuppyObject) {
