@@ -48,15 +48,15 @@ class MainViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         switch self.childViewControllers.last {
-        case let puppyView as PuppyViewController:
+        case let x where x is PuppyViewController:
             guard let favoriteViewController = storyboard.instantiateViewController(withIdentifier: "favView") as? FavoriteViewController else {
                 print("Unable to instantiate FavoriteViewController")
                 return
             }
-            favoriteViewController.delegate = self
+            // favoriteViewController.delegate = self
             puppyDetails.activeViewController = favoriteViewController
-        case let favoritePuppy as FavoriteViewController:
-            guard let puppyViewController = storyboard.instantiateViewController(withIdentifier: "puppyView") as? FavoriteViewController else {
+        case let x where x is FavoriteViewController:
+            guard let puppyViewController = storyboard.instantiateViewController(withIdentifier: "puppyView") as? PuppyViewController else {
                 print("Unable to instantiate FavoriteViewController")
                 return
             }
