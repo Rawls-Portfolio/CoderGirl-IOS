@@ -15,7 +15,7 @@ struct PuppyObject {
 }
 
 class PuppyData {
-    var allPuppies = [PuppyObject]()
+    private var allPuppies = [PuppyObject]()
     var count: Int { return allPuppies.count }
     
     init() {
